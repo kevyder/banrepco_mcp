@@ -17,7 +17,7 @@
 	"migrations": [
 		{
 			"new_sqlite_classes": [
-				"MyMCP"
+				"BanrepcoMCP"
 			],
 			"tag": "v1"
 		}
@@ -25,7 +25,7 @@
 	"durable_objects": {
 		"bindings": [
 			{
-				"class_name": "MyMCP",
+				"class_name": "BanrepcoMCP",
 				"name": "MCP_OBJECT"
 			}
 		]
