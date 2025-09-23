@@ -23,7 +23,7 @@ const DateRangeSchema = {
 const InflationSchema = z.object({
   year: z.number().int().min(1957).max(new Date().getFullYear()),
   month: z.number().int().min(1).max(12),
-  inflation_rate: z.number(),
+  annual_inflation_rate: z.number(),
   target: z.number().optional(),
 })
 
