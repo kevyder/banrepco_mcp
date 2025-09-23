@@ -9,22 +9,22 @@ const PaginationSchema = {
 
 const MonthYearSchema = {
   month: z.number().int().min(1).max(12),
-  year: z.number().int().min(1957).max(new Date().getFullYear()),
+  year: z.number().int().min(1957),
 };
 
 const DateRangeSchema = {
   startMonth: z.number().int().min(1).max(12),
-  startYear: z.number().int().min(1957).max(new Date().getFullYear()),
+  startYear: z.number().int().min(1957),
   endMonth: z.number().int().min(1).max(12),
-  endYear: z.number().int().min(1957).max(new Date().getFullYear()),
+  endYear: z.number().int().min(1957),
   ...PaginationSchema,
 };
 
 const InflationSchema = z.object({
-  year: z.number().int().min(1957).max(new Date().getFullYear()),
+  year: z.number().int().min(1957),
   month: z.number().int().min(1).max(12),
   annual_inflation_rate: z.number(),
-  target: z.number().optional(),
+  target: z.number().nullable(),
 })
 
 const PaginatedInflationSchema = z.object({
