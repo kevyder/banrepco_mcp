@@ -42,11 +42,11 @@ Update with this configuration:
 ```json
 {
   "mcpServers": {
-    "calculator": {
+    "banrepco": {
       "command": "npx",
       "args": [
         "mcp-remote",
-        "http://localhost:8787/sse"  // or remote-mcp-server.com/sse
+        "http://mcp.banrepco.kevyder.dev/sse"  // or remote-mcp-server.com/sse
       ]
     }
   }
