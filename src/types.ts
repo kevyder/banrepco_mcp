@@ -1,6 +1,6 @@
 import { z } from "zod";
 
-import { InflationSchema, PaginatedInflationSchema } from "./schemas.js";
+import { InflationSchema, PaginatedInflationSchema } from "./schemas/inflation.js";
 
 const InflationErrorResponse = z.object({ error: z.string() })
 

@@ -1,18 +1,12 @@
 import { z } from "zod";
+import { PaginationSchema } from "./common.js";
 
-// Validation schemas
-const PaginationSchema = {
-  page: z.number().int().min(1).default(1),
-  sizePerPage: z.number().int().min(1).max(100).default(50),
-  sort: z.enum(["asc", "desc"]).default("desc"),
-};
-
-const MonthYearSchema = {
+const InflationMonthYearSchema = {
   month: z.number().int().min(1).max(12),
   year: z.number().int().min(1957),
 };
 
-const DateRangeSchema = {
+const InflationDateRangeSchema = {
   startMonth: z.number().int().min(1).max(12),
   startYear: z.number().int().min(1957),
   endMonth: z.number().int().min(1).max(12),
@@ -34,4 +28,4 @@ const PaginatedInflationSchema = z.object({
   size: z.number().int(),
 });
 
-export { PaginationSchema, MonthYearSchema, DateRangeSchema, InflationSchema, PaginatedInflationSchema };
+export { InflationMonthYearSchema, InflationDateRangeSchema, InflationSchema, PaginatedInflationSchema };
