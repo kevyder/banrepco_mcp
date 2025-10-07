@@ -1,90 +1,29 @@
 import { McpAgent } from "agents/mcp";
 import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
 import { env } from "cloudflare:workers";
-import { PaginationSchema, MonthYearSchema, DateRangeSchema, InflationSchema, PaginatedInflationSchema } from "./schemas.js";
-import { InflationType, PaginatedInflationType, InflationErrorResponseType } from "./types.js"
-
+import { HttpClient } from "./utils/http-client.js";
+import { InflationTool } from "./tools/inflation.js";
+import { TrmTool } from "./tools/trm.js";
 
 export class BanrepcoMCP extends McpAgent {
 	server = new McpServer({
 		name: "Bank of the Republic of Colombia MCP Agent",
-		version: "1.0.0",
+		version: "1.1.0",
 	});
-	baseURL = env.BAN_REP_CO_API_URL
+	private readonly httpClient: HttpClient;
+	private readonly inflationTool: InflationTool;
+	private readonly trmTool: TrmTool;
 
-	private async makeGetRequest(url: string): Promise<InflationType | PaginatedInflationType | InflationErrorResponseType>{
-		try {
-			const response = await fetch(url, {
-				headers: {
-					'Accept': 'application/json',
-					'User-Agent': 'BanrepcoMCP/1.0.0'
-				}
-			});
-
-			if (!response.ok) {
-				throw new Error(`HTTP ${response.status}: ${response.statusText}`);
-			}
-
-			const data: JSON = await response.json();
-
-			if ("items" in data) {
-				return await PaginatedInflationSchema.parseAsync(data);
-			}
-
-			return await InflationSchema.parseAsync(data)
-
-		} catch (error) {
-			const errorMessage = error instanceof Error ? error.message : 'Unknown error occurred';
-			console.error('API request failed:', errorMessage);
-			return {error: `Failed to fetch data: ${errorMessage}`};
-		}
+	constructor(state: DurableObjectState, env: Env) {
+		super(state, env);
+		this.httpClient = new HttpClient(env.BAN_REP_CO_API_URL);
+		this.inflationTool = new InflationTool(this.server, this.httpClient);
+		this.trmTool = new TrmTool(this.server, this.httpClient);
 	}
 
 	async init() {
-		this.server.tool(
-			"get_inflation_data",
-			PaginationSchema,
-			async ({ page = 1, sizePerPage = 50, sort = "asc" }) => {
-				const url = `${this.baseURL}/inflation?page=${page}&size=${sizePerPage}&sort=${sort}`;
-				const data = await this.makeGetRequest(url);
-				return {
-					content: [{ type: "text", text: JSON.stringify(data) }],
-				};
-			}
-		);
-		this.server.tool(
-			"get_inflation_data_by_specific_month",
-			MonthYearSchema,
-			async ({ month, year }) => {
-				const url = `${this.baseURL}/inflation/${year}/${month}`;
-				const data = await this.makeGetRequest(url);
-				return {
-					content: [{ type: "text", text: JSON.stringify(data) }],
-				};
-			}
-		);
-		this.server.tool(
-			"get_inflation_data_by_range_dates",
-			DateRangeSchema,
-			async ({ startMonth, startYear, endMonth, endYear, page, sizePerPage, sort }) => {
-
-				const params = new URLSearchParams({
-					start_year: startYear.toString(),
-					start_month: startMonth.toString(),
-					end_year: endYear.toString(),
-					end_month: endMonth.toString(),
-					sort,
-					page: page.toString(),
-					size: sizePerPage.toString(),
-				});
-
-				const url = `${this.baseURL}/inflation/date-range?${params.toString()}`;
-				const data = await this.makeGetRequest(url);
-				return {
-					content: [{ type: "text", text: JSON.stringify(data) }],
-				};
-			}
-		);
+		this.inflationTool.start();
+		this.trmTool.start();
 	}
 }
 
