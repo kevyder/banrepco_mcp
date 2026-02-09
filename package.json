@@ -21,6 +21,6 @@
 		"@mcpjam/inspector": "1.5.12",
 		"@types/node": "25.2.2",
 		"typescript": "5.9.3",
-		"wrangler": "4.47.0"
+		"wrangler": "4.63.0"
 	}
 }
