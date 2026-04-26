@@ -12,15 +12,15 @@
 		"type-check": "tsc --noEmit"
 	},
 	"dependencies": {
-		"@modelcontextprotocol/sdk": "1.27.1",
-		"agents": "0.5.0",
+		"@modelcontextprotocol/sdk": "1.29.0",
+		"agents": "0.11.5",
 		"zod": "3.25.76"
 	},
 	"devDependencies": {
-		"@biomejs/biome": "2.4.8",
-		"@mcpjam/inspector": "2.0.9",
-		"@types/node": "25.5.0",
-		"typescript": "5.9.3",
-		"wrangler": "4.75.0"
+		"@biomejs/biome": "2.4.13",
+		"@mcpjam/inspector": "2.3.0",
+		"@types/node": "25.6.0",
+		"typescript": "6.0.3",
+		"wrangler": "4.85.0"
 	}
 }
