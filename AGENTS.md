@@ -27,6 +27,23 @@
 - `biome.json` only includes `src/**/*` and explicitly excludes `worker-configuration.d.ts`, so lint/format commands do not cover generated Worker types.
 - `bunx biome check src` currently reports existing repo issues outside any new change, so avoid broad formatting-only churn unless the task is specifically to clean that up.
 
+## Agent Skills
+
+This repo uses `autoskills` to manage agent capabilities. Run `bunx autoskills --help` for usage.
+
+### Installed Skills
+- `durable-objects` - Core runtime patterns (highly relevant - this is a DO-based MCP server)
+- `cloudflare` - General Cloudflare Worker guidance
+- `workers-best-practices` - Best practices for Workers
+- `wrangler` - Deployment CLI guidance
+- `zod` - Schema validation (already used in `src/schemas/`)
+
+### When to Load Skills
+- Load `durable-objects` skill when working on `src/index.ts`, Durable Object state, or migrations.
+
+### Install New Skills
+- `bunx autoskills install <skill-name>` to add new skills from the autoskills registry.
+
 ## Code Layout
 - `src/tools/*.ts` defines MCP tools.
 - `src/schemas/*.ts` holds Zod input schemas shared by tool registration.

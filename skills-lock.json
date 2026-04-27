@@ -1,0 +1,55 @@
+{
+  "version": 1,
+  "skills": {
+    "agents-sdk": {
+      "source": "cloudflare/skills",
+      "sourceType": "autoskills-registry",
+      "computedHash": "e610caa247da5e71560ced76fe7a1af2c6752cab2fa23977ada2e9b9c810e868"
+    },
+    "cloudflare": {
+      "source": "cloudflare/skills",
+      "sourceType": "autoskills-registry",
+      "computedHash": "da4a0ac8024248882401e17848856237e063620c7781f47bd89fcdcf72f902b3"
+    },
+    "cloudflare-deploy": {
+      "source": "openai/skills",
+      "sourceType": "autoskills-registry",
+      "computedHash": "a0e0265fb534369d95944a58ab25159b7838f62abdcd86afa2266d69b3309561"
+    },
+    "durable-objects": {
+      "source": "cloudflare/skills",
+      "sourceType": "autoskills-registry",
+      "computedHash": "ac404c9b70b831b97bd75d158f11955c9ded3b96ef6827f03b5f864c25a7be68"
+    },
+    "sandbox-sdk": {
+      "source": "cloudflare/skills",
+      "sourceType": "autoskills-registry",
+      "computedHash": "788e9d6f8cd9d42fc0c0518940eeec02b759c013573552d0ab0ac16411242dd4"
+    },
+    "typescript-advanced-types": {
+      "source": "wshobson/agents",
+      "sourceType": "autoskills-registry",
+      "computedHash": "5ca0e177c6aaaba1889255691224daafdb7d71f317cc70bede1590d3907ded42"
+    },
+    "web-perf": {
+      "source": "cloudflare/skills",
+      "sourceType": "autoskills-registry",
+      "computedHash": "02a46c6d1c10070034f6030f2e208bb306b14b04e535d3990ca4310b907e91a5"
+    },
+    "workers-best-practices": {
+      "source": "cloudflare/skills",
+      "sourceType": "autoskills-registry",
+      "computedHash": "9661260d852b07de738dd870fc92606b2a44c091b0e5c0df785ae097c26dc382"
+    },
+    "wrangler": {
+      "source": "cloudflare/skills",
+      "sourceType": "autoskills-registry",
+      "computedHash": "d9a05896e7ef591d4c499436ce0a53c510800832de30de866b2c2999efe3f622"
+    },
+    "zod": {
+      "source": "pproenca/dot-skills",
+      "sourceType": "autoskills-registry",
+      "computedHash": "aa8a97195b07763d37494b511f48be90979fd6826c031956c831cfc58f6a24b8"
+    }
+  }
+}
