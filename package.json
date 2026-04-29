@@ -18,7 +18,7 @@
 	},
 	"devDependencies": {
 		"@biomejs/biome": "2.4.13",
-		"@mcpjam/inspector": "2.3.0",
+		"@mcpjam/inspector": "2.4.3",
 		"@types/node": "25.6.0",
 		"autoskills": "0.3.3",
 		"typescript": "6.0.3",
