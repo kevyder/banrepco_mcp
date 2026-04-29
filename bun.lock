@@ -13,7 +13,7 @@
         "@biomejs/biome": "2.4.13",
         "@mcpjam/inspector": "2.3.0",
         "@types/node": "25.6.0",
-        "autoskills": "0.3.3",
+        "autoskills": "0.3.4",
         "typescript": "6.0.3",
         "wrangler": "4.85.0",
       },
@@ -870,7 +870,7 @@
 
     "ast-kit": ["ast-kit@2.2.0", "", { "dependencies": { "@babel/parser": "^7.28.5", "pathe": "^2.0.3" } }, "sha512-m1Q/RaVOnTp9JxPX+F+Zn7IcLYMzM8kZofDImfsKZd8MbR+ikdOzTeztStWqfrqIxZnYWryyI9ePm3NGjnZgGw=="],
 
-    "autoskills": ["autoskills@0.3.3", "", { "bin": { "autoskills": "index.mjs" } }, "sha512-aakI2Qwx/TuYj4/3MTTVgQnbzqVluvKECFJOK77R93owhn6TSjlYAI2YzFyDnOlQUdBhGiouOPqFYO892lyDgQ=="],
+    "autoskills": ["autoskills@0.3.4", "", { "bin": { "autoskills": "index.mjs" } }, "sha512-VOZzuUQ1TL8DO60+FUgihrm3z/D2yLUKHN2HRFjPzFFLbm7buiGr71E598MPdnVFGp6opx6rkKnXrKs50ww8fA=="],
 
     "bail": ["bail@2.0.2", "", {}, "sha512-0xO6mYd7JB2YesxDKplafRpsiOzPt9V02ddPCLbY1xYGPOX24NTyN50qnUxgCPcSoYMhKpAuBTjQoRZCAkUDRw=="],
 
