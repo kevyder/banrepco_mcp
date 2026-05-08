@@ -6,7 +6,7 @@
       "name": "banrepco_mcp",
       "dependencies": {
         "@modelcontextprotocol/sdk": "1.29.0",
-        "agents": "0.11.5",
+        "agents": "0.11.8",
         "zod": "3.25.76",
       },
       "devDependencies": {
@@ -846,7 +846,7 @@
 
     "agent-base": ["agent-base@6.0.2", "", { "dependencies": { "debug": "4" } }, "sha512-RZNwNclF7+MS/8bDg70amg32dyeZGZxiDuQmZxKLAlQjr3jGyLx+4Kkk58UO7D2QdgFIQCovuSuZESne6RG6XQ=="],
 
-    "agents": ["agents@0.11.5", "", { "dependencies": { "@babel/plugin-proposal-decorators": "^7.29.0", "@cfworker/json-schema": "^4.1.1", "@modelcontextprotocol/sdk": "1.29.0", "@rolldown/plugin-babel": "^0.2.3", "cron-schedule": "^6.0.0", "mimetext": "^3.0.28", "nanoid": "^5.1.9", "partyserver": "^0.4.1", "partysocket": "1.1.18", "yargs": "^18.0.0" }, "peerDependencies": { "@cloudflare/ai-chat": ">=0.0.8 <1.0.0", "@cloudflare/codemode": ">=0.0.7 <1.0.0", "@tanstack/ai": ">=0.10.2 <1.0.0", "@x402/core": "^2.0.0", "@x402/evm": "^2.0.0", "ai": "^6.0.0", "react": "^19.0.0", "vite": ">=6.0.0 <9.0.0", "zod": "^4.0.0" }, "optionalPeers": ["@cloudflare/ai-chat", "@cloudflare/codemode", "@tanstack/ai", "@x402/core", "@x402/evm", "vite"], "bin": { "agents": "dist/cli/index.js" } }, "sha512-1wPkA7OOfEdR4GKwaBmqdnZkOxutN2mCsolVU4ekg5QxrTLnC9Vz9LyZPcGqV2ldyfpUY7R73AUqtig5iYRLvQ=="],
+    "agents": ["agents@0.11.8", "", { "dependencies": { "@babel/plugin-proposal-decorators": "^7.29.0", "@cfworker/json-schema": "^4.1.1", "@modelcontextprotocol/sdk": "1.29.0", "@rolldown/plugin-babel": "^0.2.3", "cron-schedule": "^6.0.0", "mimetext": "^3.0.28", "nanoid": "^5.1.9", "partyserver": "^0.5.5", "partysocket": "1.1.18", "yargs": "^18.0.0" }, "peerDependencies": { "@cloudflare/ai-chat": ">=0.5.2 <1.0.0", "@cloudflare/codemode": ">=0.3.4 <1.0.0", "@tanstack/ai": ">=0.10.2 <1.0.0", "@x402/core": "^2.0.0", "@x402/evm": "^2.0.0", "ai": "^6.0.0", "react": "^19.0.0", "vite": ">=6.0.0 <9.0.0", "zod": "^4.0.0" }, "optionalPeers": ["@cloudflare/ai-chat", "@cloudflare/codemode", "@tanstack/ai", "@x402/core", "@x402/evm", "vite"], "bin": { "agents": "dist/cli/index.js" } }, "sha512-sxqB5MOgNULtBIQOn5Qr9VQ9gglFatwv+AkL4PugBl+atYFMgJ+IG9wp8E63c/iRpuUZtIw1OaGgSZ+u+AtIQw=="],
 
     "ai": ["ai@6.0.168", "", { "dependencies": { "@ai-sdk/gateway": "3.0.104", "@ai-sdk/provider": "3.0.8", "@ai-sdk/provider-utils": "4.0.23", "@opentelemetry/api": "1.9.0" }, "peerDependencies": { "zod": "^3.25.76 || ^4.1.8" } }, "sha512-2HqCJuO+1V2aV7vfYs5LFEUfxbkGX+5oa54q/gCCTL7KLTdbxcCu5D7TdLA5kwsrs3Szgjah9q6D9tpjHM3hUQ=="],
 
@@ -1462,7 +1462,7 @@
 
     "parseurl": ["parseurl@1.3.3", "", {}, "sha512-CiyeOxFT/JZyN5m0z9PfXw4SCBJ6Sygz1Dpl0wqjlhDEGGBP1GnsUVEL0p63hoG1fcj3fHynXi9NYO4nWOL+qQ=="],
 
-    "partyserver": ["partyserver@0.4.1", "", { "dependencies": { "nanoid": "^5.1.6" }, "peerDependencies": { "@cloudflare/workers-types": "^4.20240729.0" } }, "sha512-StSs0oY8RmTxjGNil7VbCG4gnTN+4rYX20fiUIItAxTPpr/5rPDZT6PIvMROkk9M1Gn7GzE1wuQXwhxceaGhXA=="],
+    "partyserver": ["partyserver@0.5.5", "", { "dependencies": { "nanoid": "^5.1.9" }, "peerDependencies": { "@cloudflare/workers-types": "^4.20260424.1" } }, "sha512-7zub8oV8Od9dY2aXGrgzhX5GLceaWOg7xB5VWXtDcqt2BWVDIOCAgaF0AmBMSu3AXhJHsFdzPnA8SSZdybXMbQ=="],
 
     "partysocket": ["partysocket@1.1.18", "", { "dependencies": { "event-target-polyfill": "^0.0.4" }, "peerDependencies": { "react": ">=17" }, "optionalPeers": ["react"] }, "sha512-SyuvH9VavWOSa14v6dYdp3yfSUDII4BQB1+TkGOFBkjfZKjnDBiba4fhdhwBlqGBkqw4ea3gTA1DYhSffX24Wg=="],
 
