@@ -17,7 +17,7 @@
 		"zod": "3.25.76"
 	},
 	"devDependencies": {
-		"@biomejs/biome": "2.4.13",
+		"@biomejs/biome": "2.5.0",
 		"@mcpjam/inspector": "2.4.12",
 		"@types/node": "25.9.1",
 		"autoskills": "0.3.6",
