@@ -8,7 +8,7 @@ import { TrmTool } from "./tools/trm.js";
 export class BanrepcoMCP extends McpAgent {
 	server = new McpServer({
 		name: "Bank of the Republic of Colombia MCP Agent",
-		version: "1.1.0",
+		version: "1.1.1",
 	});
 	private readonly httpClient: HttpClient;
 	private readonly inflationTool: InflationTool;
