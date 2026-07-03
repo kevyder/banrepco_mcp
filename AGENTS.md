@@ -48,4 +48,5 @@ This repo uses `autoskills` to manage agent capabilities. Run `bunx autoskills -
 - `src/tools/*.ts` defines MCP tools.
 - `src/schemas/*.ts` holds Zod input schemas shared by tool registration.
 - `src/utils/http-client.ts` is the shared fetch wrapper for the upstream BanRep API.
+- `src/utils/progress.ts` exports `sendProgress(extra, progress, total?, message?)` — sends `notifications/progress` to clients. Guards `progressToken` internally; no-op if client omits it. Use `extra.sendNotification`, not `this.server.server.notification()`.
 - `src/types.ts` currently contains shared inferred response types for inflation endpoints.
