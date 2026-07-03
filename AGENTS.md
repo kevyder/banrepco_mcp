@@ -7,12 +7,12 @@
 ## Runtime Wiring
 - This is an MCP server built on Cloudflare Workers Durable Objects. `BanrepcoMCP` extends `McpAgent` in `src/index.ts` and is also the Durable Object class bound as `MCP_OBJECT` in `wrangler.jsonc`.
 - HTTP routing is minimal and path-sensitive: `/sse` and `/sse/message` use `BanrepcoMCP.serveSSE("/sse")`; `/mcp` uses `BanrepcoMCP.serve("/mcp")`. Preserve those paths unless the protocol surface is being changed deliberately.
-- Tool registration happens in `BanrepcoMCP.init()` by instantiating tool classes and calling `start()`. Add new MCP tools under `src/tools/` and register them there.
+- Tool registration: new MCP tools extend `BaseTool` (`src/tools/tool.interface.ts`), implement `protected initTools()`, and get instantiated + `start()`-ed in `BanrepcoMCP` constructor. `start()` is final — calls `initTools()` internally.
 
 ## Environment And Generated Types
 - `BAN_REP_CO_API_URL` is required at runtime. `src/index.ts` passes it into `HttpClient`, and `worker-configuration.d.ts` declares it.
+- `wrangler.jsonc` has `"vars"` commented out — the var is NOT declared in config. Provide it via `wrangler secret put BAN_REP_CO_API_URL` (prod) or `.dev.vars` (local dev). Wrangler does NOT read `.env`; use `.dev.vars` for local secrets.
 - After changing Worker bindings or env vars in `wrangler.jsonc`, run `bun run cf-typegen` to regenerate `worker-configuration.d.ts`.
-- `.env` is gitignored; there is no checked-in example env file.
 
 ## Commands
 - Dev server: `bun run dev` or `bun run start`.
